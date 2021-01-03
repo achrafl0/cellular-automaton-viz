@@ -5,12 +5,9 @@ import {Tile} from './Tile';
 import {Cell} from 'src/types/tileData';
 
 interface GridProps {
-  seed: number;
   grid: Cell[][];
 }
-export const Grid: React.FC<GridProps> = ({seed, grid}) => {
-  console.log(seed);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const Grid: React.FC<GridProps> = ({grid}) => {
   return (
     <div
       className="container"

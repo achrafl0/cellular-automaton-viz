@@ -15,7 +15,6 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
