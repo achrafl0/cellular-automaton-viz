@@ -34,7 +34,7 @@ const getCellCode = (i: number, j: number, grid: Cell[][]): number => {
       ngh_j >= CANVAS_LAYOUT.NUM_ROW
     ) {
       // We consider out of bounds to be 1
-      cell = cell.concat('1');
+      cell = cell.concat('0');
     } else {
       cell = cell.concat(grid[ngh_i][ngh_j].content.toString());
     }
@@ -50,7 +50,6 @@ export const applyRule = (grid: Cell[][], rule: number): Cell[][] => {
   So first thing, we iterate through the cells to get their code 
   Then we check the corresponding bit in the rule
   */
-  console.log(rule);
   const newData: Cell[][] = [];
   for (let i = 0; i < CANVAS_LAYOUT.NUM_COL; i++) {
     newData.push([]);

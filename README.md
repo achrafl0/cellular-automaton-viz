@@ -13,3 +13,4 @@ This project is made in React to have fun around 2D cellular automaton and explo
 * Apply the rules automatically each X ms
 * Have user input for the rules
 * More config and flexibility
+* Add the possibility for the user to input initial state

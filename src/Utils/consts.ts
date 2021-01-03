@@ -1,8 +1,8 @@
 export const CANVAS_LAYOUT = {
   WIDTH: 400,
   HEIGHT: 400,
-  NUM_COL: 30,
-  NUM_ROW: 30,
+  NUM_COL: 80,
+  NUM_ROW: 80,
 };
 
 export const CELL_LAYOUT = {
@@ -10,4 +10,4 @@ export const CELL_LAYOUT = {
   CELL_WIDTH: CANVAS_LAYOUT.WIDTH / CANVAS_LAYOUT.NUM_ROW,
 };
 
-export const FILL_PERCENT = 0.8;
+export const FILL_PERCENT = 0.9;
