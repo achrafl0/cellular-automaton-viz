@@ -1,0 +1,7 @@
+.tile {
+  border: 0.3px solid black;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: 1;
+}
