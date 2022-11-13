@@ -16,6 +16,8 @@ import {
 import {useInterval} from 'src/Utils/useInterval';
 import {Grid} from '../Components/Grid';
 import './Homeview.css';
+import {add} from 'breath';
+
 export const Homeview: React.FC = () => {
   const [rule, setRule] = useState(randomPower(MAX_NEIGHBOURS_DISPOSITION));
   const [fillPercent, setFillPercent] = useState(FILL_PERCENT);
