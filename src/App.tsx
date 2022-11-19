@@ -1,14 +1,11 @@
 import React from 'react';
-import {useWasm} from './Utils/useWasm';
 import {Homeview} from './Views/Homeview';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 const App: React.FC = () => {
-  const {isLoading, error} = useWasm();
-  if (error) {
-    return <h1>Error</h1>;
-  }
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
   return <Homeview />;
 };
 

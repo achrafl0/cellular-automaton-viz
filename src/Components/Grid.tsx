@@ -2,21 +2,17 @@ import React from 'react';
 import './Grid.css';
 import {Tile} from './Tile';
 import {Cell} from 'src/types/tileData';
+import {Layout} from 'src/Utils/consts';
 
 interface GridProps {
   grid: Cell[][];
   toggle: (i: number, j: number) => () => void;
-  layout: {
-    NUM_COL: number;
-    NUM_ROW: number;
-    HEIGHT: number;
-    WIDTH: number;
-  };
+  layout: Layout;
 }
 export const Grid: React.FC<GridProps> = ({grid, toggle, layout}) => {
   const getBgColor = (i: number, j: number) => {
     if (grid[i][j].content === 1) {
-      return 'black';
+      return '#624F82'; // Alive cells
     }
     const {NUM_COL, NUM_ROW} = layout;
     const rowCenter = (NUM_ROW - 1) / 2;
@@ -24,9 +20,9 @@ export const Grid: React.FC<GridProps> = ({grid, toggle, layout}) => {
     const coloredRow = new Set([Math.floor(rowCenter), Math.ceil(rowCenter)]);
     const coloredCol = new Set([Math.floor(colCenter), Math.ceil(colCenter)]);
     if (coloredCol.has(j) && coloredRow.has(i)) {
-      return 'red';
+      return '#9F73AB'; // center cells
     }
-    return 'white';
+    return '#A3C7D6'; // Dead cells
   };
   return (
     <div
@@ -34,7 +30,8 @@ export const Grid: React.FC<GridProps> = ({grid, toggle, layout}) => {
       style={{
         height: layout.HEIGHT,
         width: layout.WIDTH,
-      }}>
+      }}
+    >
       {grid.map((row, i) => {
         return (
           <div key={`row${i}`} className="row-container">

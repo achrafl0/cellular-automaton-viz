@@ -1,7 +1,8 @@
 .tile {
-  border: 0.3px solid black;
+  box-shadow: 0 0 0 0.333px #624f82;
   align-items: center;
   justify-content: center;
   display: flex;
   flex: 1;
+  transition: 'background-color 0.5s ease';
 }

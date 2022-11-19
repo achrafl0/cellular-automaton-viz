@@ -1,10 +1,10 @@
 import React from 'react';
-import {CELL_LAYOUT} from '../Utils/consts';
+import {CELL_LAYOUT, Layout} from '../Utils/consts';
 import './Tile.css';
 
 type Props = {
-  layout: any;
-  backgroundColor: 'white' | 'black' | 'red';
+  layout: Layout;
+  backgroundColor: string;
   onClick: () => void;
 };
 

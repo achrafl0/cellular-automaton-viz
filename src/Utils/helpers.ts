@@ -87,8 +87,8 @@ const computeCellCode =
         // if it's out of bounds it's considered as dead, no wrap-around
         return prv;
       }
-      // const isNghRelevant = ruleBitwise(neighborRule, k);
-      return prv + grid[nghI][nghJ].content; // * isNghRelevant;
+      const isNghRelevant = ruleBitwise(neighborRule, k);
+      return prv + grid[nghI][nghJ].content * isNghRelevant;
     }, 0);
     return cellCode;
   };
@@ -107,6 +107,17 @@ export const computeNeighborRule = (neighborGrid: Cell[][]) => {
     return prv + neighborGrid[nghI][nghJ].content * Math.pow(2, k);
   }, 0);
   return neighborRule;
+};
+
+export const ruleToGrid = (neighborRule: number) => {
+  const newNeighborGrid = generateGrid(0, 3, 3)();
+  const flatIndex = getNeighbors(1, 1);
+  flatIndex.forEach(([nghI, nghJ], k) => {
+    newNeighborGrid[nghI][nghJ] = {
+      content: ruleBitwise(neighborRule, k),
+    };
+  });
+  return newNeighborGrid;
 };
 
 /*
